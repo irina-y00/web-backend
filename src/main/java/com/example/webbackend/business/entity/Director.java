@@ -1,5 +1,6 @@
 package com.example.webbackend.business.entity;
 
+//режиссер
 public class Director {
     private Integer id;
     private String fullName;

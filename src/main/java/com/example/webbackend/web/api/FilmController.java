@@ -12,8 +12,8 @@ import java.util.List;
 @RequestMapping("/film")
 @RestController
 public class FilmController {
-    final
-    FilmService filmService;
+
+    final FilmService filmService;
 
     public FilmController(FilmService filmService) {
         this.filmService = filmService;
@@ -24,7 +24,7 @@ public class FilmController {
         return filmService.getAllFilm();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") // url: localhost:8080/film/{id}
     public Film getFilmById(@PathVariable Integer id){
         return filmService.getFilm(id);
     }
