@@ -1,6 +1,6 @@
 package com.example.webbackend.web.api;
 
-import com.example.webbackend.business.entity.Film;
+import com.example.webbackend.business.entity.FilmEntity;
 import com.example.webbackend.business.service.FilmService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,12 +20,12 @@ public class FilmController {
     }
 
     @GetMapping
-    public List<Film> getAll(){
+    public List<FilmEntity> getAll(){
         return filmService.getAllFilm();
     }
 
     @GetMapping("/{id}") // url: localhost:8080/film/{id}
-    public Film getFilmById(@PathVariable Integer id){
+    public FilmEntity getFilmById(@PathVariable Integer id){
         return filmService.getFilm(id);
     }
 }

@@ -85,6 +85,126 @@
                              references="authority(id)" foreignKeyName="user2authority_authority_fk"/>
             </column>
         </createTable>
+
+        <createTable tableName="genre">
+            <column name="id" remarks="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="genre_pkey"/>
+            </column>
+
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <createTable tableName="director">
+            <column name="id" remarks="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="director_pkey"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="info_film">
+            <column name="id" remarks="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="info_films_pkey"/>
+            </column>
+            <column name="date" remarks="дата выхода фильма" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+
+        <createTable tableName="films">
+            <column name="id" remarks="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="films_pkey"/>
+            </column>
+            <column name="uri_image" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(1024)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="info_id" type="bigint">
+                <constraints nullable="false"
+                             references="info_film(id)"
+                             foreignKeyName="films_info_films_fk"
+                             unique="true"/>
+            </column>
+        </createTable>
+
+
+        <createTable tableName="info2genre">
+            <column name="info_id" type="bigint">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="info2genre_pkey"
+                             references="info_film(id)"
+                             foreignKeyName="info_films2genre_fk"
+                />
+            </column>
+            <column name="genre_id" type="bigint">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="info2genre_pkey"
+                             references="genre(id)"
+                             foreignKeyName="genre_films2genre_fk"
+                />
+            </column>
+        </createTable>
+
+        <createTable tableName="info2director">
+            <column name="info_id" type="bigint">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="info2director_pkey"
+                             references="info_film(id)"
+                             foreignKeyName="info_info2director_fk"
+                />
+            </column>
+            <column name="director_id" type="bigint">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="info2director_pkey"
+                             references="director(id)"
+                             foreignKeyName="director_info_info2director_fk"
+                />
+            </column>
+        </createTable>
+
+        <createTable tableName="comments">
+            <column name="id" remarks="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="comments_pkey"/>
+            </column>
+
+            <column name="date_time_create" remarks="Дата время вставки записи" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_time_modif" remarks="Дата время модификации записи" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="comment" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="author_id" type="uuid">
+                <constraints nullable="false" references="users(id)" foreignKeyName="comments_users_fk"/>
+            </column>
+
+            <column name="films_id" type="bigint">
+                <constraints references="films(id)" foreignKeyName="films_comment_fk"/>
+            </column>
+
+        </createTable>
+
+
     </changeSet>
 
 </databaseChangeLog>
