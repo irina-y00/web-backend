@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("/film")
+import static com.example.webbackend.utils.ApiConstant.FILM;
+
+@RequestMapping(FILM)
 @RestController
 public class FilmController {
 
