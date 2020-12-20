@@ -22,7 +22,6 @@ import java.util.*;
 @EqualsAndHashCode(exclude = {"comments"})
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @ToString(exclude = {"comments"})
 public class UserEntity implements UserDetails {
     @Id

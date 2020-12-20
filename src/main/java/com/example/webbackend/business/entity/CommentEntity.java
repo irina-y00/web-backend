@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @ToString
 @EqualsAndHashCode(callSuper = true)
 @Entity(name = "comments")
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommentEntity extends ParentEntity<Long>{

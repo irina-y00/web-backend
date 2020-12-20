@@ -1,5 +1,6 @@
 package com.example.webbackend.business.service.impl;
 
+import com.example.webbackend.business.entity.CommentEntity;
 import com.example.webbackend.business.entity.FilmEntity;
 import com.example.webbackend.business.service.FilmService;
 import org.springframework.stereotype.Service;

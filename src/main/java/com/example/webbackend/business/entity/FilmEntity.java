@@ -3,7 +3,6 @@ package com.example.webbackend.business.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Getter
@@ -11,13 +10,9 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode(callSuper = true)
 @Entity(name = "films")
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FilmEntity extends ParentEntity<Long> {
-
-    @NotBlank
-    private String name;
+public class FilmEntity extends ModelEntity<Long> {
 
     private String description;
 

@@ -1,26 +1,17 @@
 package com.example.webbackend.business.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
-
-@Entity
+@Entity(name = "authority")
 @Getter
 @Setter
-@Table(name = "authority")
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @ToString
-public class AuthorityEntity extends ParentEntity<Integer> implements GrantedAuthority {
-
-    @NotBlank
-    private String name;
+public class AuthorityEntity extends ModelEntity<Integer> implements GrantedAuthority {
 
     private String description;
 

@@ -9,6 +9,7 @@
         <createTable tableName="authority">
             <column name="id" remarks="ID" type="integer" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="authority_pkey"/>
+                <!--свойства колонки-->
             </column>
             <column name="name" type="varchar(255)">
                 <constraints unique="true" uniqueConstraintName="authority_name_uk"/>

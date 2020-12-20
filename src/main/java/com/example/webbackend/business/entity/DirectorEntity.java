@@ -11,7 +11,6 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode(callSuper = true)
 @Entity(name = "director")
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class DirectorEntity extends ModelEntity<Long>{
