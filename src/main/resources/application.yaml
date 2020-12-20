@@ -20,6 +20,14 @@ spring:
     password: ${spring.datasource.password}
     drop-first: true
 
+security:
+  oauth2:
+    authorization:
+      jwt:
+        key-store: classpath:jwt/jwt.jks
+        key-alias: jwt
+        key-store-password: storePassword
+
 server:
   servlet:
     session:
