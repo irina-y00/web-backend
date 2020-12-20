@@ -1,4 +1,4 @@
-package com.example.webbackend.web.api;
+package com.example.webbackend.web.api.v1;
 
 import com.example.webbackend.business.entity.FilmEntity;
 import com.example.webbackend.business.service.FilmService;

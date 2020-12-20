@@ -114,6 +114,9 @@
             <column name="date" remarks="дата выхода фильма" type="date">
                 <constraints nullable="false"/>
             </column>
+            <column name="budget" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
 
 
