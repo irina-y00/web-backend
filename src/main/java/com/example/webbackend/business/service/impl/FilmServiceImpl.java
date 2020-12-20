@@ -31,4 +31,9 @@ public class FilmServiceImpl implements FilmService {
     public void delete(@NotNull Long id) {
 
     }
+
+    @Override
+    public FilmReadDto findById(Long id) {
+        return null;
+    }
 }

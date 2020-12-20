@@ -12,4 +12,10 @@ public final class ApiConstant {
     public static final String COMMENTS = ROOT_PATH + "/comments";
 
     public static final String FILM = ROOT_PATH + "/film";
+
+    public static final String GENRE = ROOT_PATH + "/genre";
+
+    public static final String DIRECTOR = ROOT_PATH + "/director";
+
+
 }

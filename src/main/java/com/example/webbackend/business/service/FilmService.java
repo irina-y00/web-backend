@@ -8,6 +8,5 @@ import java.util.List;
 
 //Описываем поведения сервиса для фильма
 public interface FilmService extends DtoCrudService<Long, FilmReadDto, FilmCreateDto> {
-
-
+    FilmReadDto findById(Long id);
 }
