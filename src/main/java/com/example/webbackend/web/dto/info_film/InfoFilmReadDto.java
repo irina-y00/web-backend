@@ -14,6 +14,6 @@ public class InfoFilmReadDto implements ParentDto {
     private LocalDate date;
     private String budget;
     private List<GenreDto> genre;
-    private List<DirectorDto> director;
+    private List<DirectorDto> directors;
 
 }
