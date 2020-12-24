@@ -90,11 +90,13 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
                     .antMatchers(HttpMethod.POST, "/oauth/**").permitAll()
                     .antMatchers(HttpMethod.OPTIONS, "/oauth/**").permitAll()
                     .antMatchers(HttpMethod.POST, "/api/register").anonymous()
-                    .antMatchers(HttpMethod.GET, "/api/v1/**").hasAnyAuthority("ADMIN", "USER")
-                    .antMatchers(HttpMethod.POST, "/api/v1/**").hasAnyAuthority("ADMIN", "USER")
-                    .antMatchers(HttpMethod.PUT, "/api/v1/**").hasAnyAuthority("ADMIN", "USER")
-                    .antMatchers(HttpMethod.DELETE, "/api/v1/**").hasAnyAuthority("ADMIN", "USER")
-                    .antMatchers(HttpMethod.PATCH, "/api/v1/**").hasAnyAuthority("ADMIN", "USER")
+                    .antMatchers(HttpMethod.GET, "/api/v1/**").permitAll()
+                    .antMatchers(HttpMethod.POST, "/api/v1/**").permitAll()
+                    .antMatchers(HttpMethod.PUT, "/api/v1/**").permitAll()
+                    .antMatchers(HttpMethod.DELETE, "/api/v1/**").permitAll()
+                    .antMatchers(HttpMethod.PATCH, "/api/v1/**").permitAll()
+                    .antMatchers(HttpMethod.POST, "/api/v1/comments").hasAnyAuthority("ADMIN", "USER")
+                    .antMatchers(HttpMethod.PUT, "/api/v1/comments").hasAnyAuthority("ADMIN", "USER")
                     .anyRequest()
                     .authenticated();
 

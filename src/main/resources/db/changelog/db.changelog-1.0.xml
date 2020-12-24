@@ -57,9 +57,6 @@
             <column name="patronymic" type="varchar(40)">
                 <constraints nullable="false"/>
             </column>
-            <column name="gender" type="smallint">
-                <constraints nullable="false"/>
-            </column>
             <column name="phone" type="varchar(32)"/>
             <column name="account_confirmed" type="boolean"/>
             <column name="account_expired" type="boolean"/>
@@ -125,7 +122,7 @@
                 <constraints primaryKey="true" primaryKeyName="films_pkey"/>
             </column>
             <column name="uri_image" type="varchar(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
 
             <column name="name" type="varchar(50)">

@@ -6,6 +6,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -24,6 +25,7 @@ import java.util.*;
 @AllArgsConstructor
 @Builder
 @ToString(exclude = {"comments"})
+@EntityListeners(AuditingEntityListener.class)
 public class UserEntity implements UserDetails {
     @Id
     @GeneratedValue(generator = "UserUUIDGenerator")
