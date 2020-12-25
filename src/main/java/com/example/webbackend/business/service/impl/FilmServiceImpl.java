@@ -10,6 +10,7 @@ import com.example.webbackend.web.mapper.FilmMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -27,10 +28,11 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public Long saveDto(@NotNull FilmCreateDto dto) {
-        return repository.save(mapper.toEntity(dto)).getId();
+        return repository.saveAndFlush(mapper.toEntity(dto)).getId();
     }
 
     @Override
+    @Transactional
     public void update(@NotNull FilmCreateDto dto) {
         FilmEntity entity = repository.findById(dto.getId()).orElseThrow(() -> new ResourceNotFoundException(dto));
         mapper.updateFromDTO(dto,entity);

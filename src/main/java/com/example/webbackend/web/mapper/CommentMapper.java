@@ -16,7 +16,7 @@ public interface CommentMapper extends GenericMapper<CommentCreateDto, CommentEn
 
     default FilmEntity toFilm(CommentCreateDto dto){
         FilmEntity filmEntity = new FilmEntity();
-        filmEntity.setId(dto.getId());
+        filmEntity.setId(dto.getFilmId());
         return filmEntity;
     }
 }

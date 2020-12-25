@@ -4,9 +4,13 @@ import com.example.webbackend.business.entity.FilmEntity;
 import com.example.webbackend.business.entity.InfoFilmsEntity;
 import com.example.webbackend.web.dto.film.FilmCreateDto;
 import com.example.webbackend.web.dto.film.FilmReadDto;
+import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 
 @Mapper(uses = {GenreMapper.class, DirectorMapper.class})
 public abstract class FilmMapper implements GenericReadMapper<FilmReadDto, FilmEntity>, GenericMapper<FilmCreateDto, FilmEntity> {
@@ -19,6 +23,10 @@ public abstract class FilmMapper implements GenericReadMapper<FilmReadDto, FilmE
 
     @Mapping(target = "info", source = "dto")
     public abstract FilmEntity toEntity(FilmCreateDto dto);
+
+    @Mapping(target = "info", expression = "java(toEntityInfo(dto))")
+    @BeanMapping(nullValuePropertyMappingStrategy = IGNORE)
+    public abstract void updateFromDTO(FilmCreateDto dto, @MappingTarget FilmEntity filmEntity);
 
     @Override
     @Mapping(target = "infoFilm", source = "entity.info")

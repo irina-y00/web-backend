@@ -12,6 +12,7 @@ import java.util.List;
 @Entity(name = "films")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class FilmEntity extends ModelEntity<Long> {
 
     private String description;

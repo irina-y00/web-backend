@@ -34,5 +34,56 @@
         </insert>
 
     </changeSet>
+    <changeSet id="20202112" author="irina">
+        <insert tableName="genre">
+            <column name="id">1</column>
+            <column name="name">Драмы</column>
+        </insert>
+
+        <insert tableName="genre">
+            <column name="id">2</column>
+            <column name="name">Триллеры</column>
+        </insert>
+
+        <insert tableName="genre">
+            <column name="id">3</column>
+            <column name="name">Фэнтези</column>
+        </insert>
+
+        <insert tableName="genre">
+            <column name="id">4</column>
+            <column name="name">Боевики</column>
+        </insert>
+
+        <insert tableName="genre">
+            <column name="id">5</column>
+            <column name="name">Комедии</column>
+        </insert>
+
+        <insert tableName="genre">
+            <column name="id">6</column>
+            <column name="name">Биография</column>
+        </insert>
+
+        <insert tableName="director">
+            <column name="id">1</column>
+            <column name="name">Хоаким Роннинг</column>
+        </insert>
+
+        <insert tableName="director">
+            <column name="id">2</column>
+            <column name="name">Эспен Сандберг</column>
+        </insert>
+
+        <insert tableName="director">
+            <column name="id">3</column>
+            <column name="name">Тодд Филлипс</column>
+        </insert>
+
+        <insert tableName="director">
+            <column name="id">4</column>
+            <column name="name">Джон Ли Хэнкок</column>
+        </insert>
+    </changeSet>
 
 </databaseChangeLog>

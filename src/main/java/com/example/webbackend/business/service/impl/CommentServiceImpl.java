@@ -30,7 +30,8 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public Long saveDto(@NotNull CommentCreateDto dto) {
-        return repository.save(mapper.toEntity(dto)).getId();
+        CommentEntity commentEntity = mapper.toEntity(dto);
+        return repository.saveAndFlush(commentEntity).getId();
     }
 
     @Override

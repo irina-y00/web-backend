@@ -8,6 +8,6 @@ import lombok.Data;
 public class CommentDto implements ParentDto {
     private Long id;
     private String comment;
-    private UserDto dto;
+    private UserDto author;
 }
 
